@@ -12,11 +12,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         :root {
             --primary: #6366f1;
             --secondary: #8b5cf6;
@@ -42,7 +40,6 @@
             --glass: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--dark);
@@ -50,7 +47,6 @@
             line-height: 1.7;
             overflow-x: hidden;
         }
-
         /* Cursor Trail */
         .cursor-trail {
             position: fixed;
@@ -63,7 +59,6 @@
             z-index: 9999;
             transition: opacity 0.3s;
         }
-
         /* Floating Particles */
         .particle {
             position: absolute;
@@ -74,12 +69,10 @@
             opacity: 0.7;
             animation: float 6s ease-in-out infinite;
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -90,7 +83,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -101,7 +93,6 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.3;
         }
-
         .hero-content {
             text-align: center;
             z-index: 2;
@@ -109,7 +100,6 @@
             max-width: 800px;
             padding: 2rem;
         }
-
         .hero-avatar {
             width: 180px;
             height: 180px;
@@ -127,7 +117,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-avatar::before {
             content: '';
             position: absolute;
@@ -138,17 +127,14 @@
             background: conic-gradient(transparent, rgba(255,255,255,0.3), transparent);
             animation: spin 3s linear infinite;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
             100% { transform: scale(1.05); box-shadow: 0 25px 50px rgba(0,0,0,0.4); }
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
@@ -159,21 +145,18 @@
             -webkit-text-fill-color: transparent;
             animation: fadeInUp 1s ease-out;
         }
-
         .hero-subtitle {
             font-size: clamp(1.2rem, 2vw, 1.5rem);
             margin-bottom: 2rem;
             opacity: 0.9;
             animation: fadeInUp 1s ease-out 0.2s both;
         }
-
         .hero-description {
             font-size: 1.1rem;
             opacity: 0.8;
             margin-bottom: 3rem;
             animation: fadeInUp 1s ease-out 0.4s both;
         }
-
         .hero-cta {
             display: flex;
             gap: 1rem;
@@ -181,7 +164,6 @@
             flex-wrap: wrap;
             animation: fadeInUp 1s ease-out 0.6s both;
         }
-
         .btn {
             padding: 1rem 2rem;
             border: none;
@@ -193,24 +175,20 @@
             overflow: hidden;
             cursor: pointer;
         }
-
         .btn-primary {
             background: var(--gradient-4);
             color: var(--dark);
         }
-
         .btn-secondary {
             background: transparent;
             color: white;
             border: 2px solid rgba(255,255,255,0.3);
             backdrop-filter: blur(10px);
         }
-
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -221,7 +199,6 @@
                 transform: translateY(0);
             }
         }
-
         /* Navigation */
         .nav {
             position: fixed;
@@ -236,13 +213,11 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
-
         .nav-list {
             display: flex;
             list-style: none;
             gap: 0.5rem;
         }
-
         .nav-item a {
             text-decoration: none;
             color: white;
@@ -251,19 +226,16 @@
             transition: all 0.3s ease;
             font-weight: 500;
         }
-
         .nav-item a:hover, .nav-item a.active {
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
         }
-
         /* About Section */
         .about {
             padding: 8rem 2rem;
             background: var(--dark);
             position: relative;
         }
-
         .about::before {
             content: '';
             position: absolute;
@@ -274,13 +246,11 @@
             background: var(--gradient-2);
             clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         .section-title {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
@@ -291,14 +261,12 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin-top: 4rem;
         }
-
         .about-card {
             background: var(--glass);
             backdrop-filter: blur(20px);
@@ -309,7 +277,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .about-card::before {
             content: '';
             position: absolute;
@@ -319,32 +286,27 @@
             height: 4px;
             background: var(--gradient-4);
         }
-
         .about-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-
         .about-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--accent);
         }
-
         /* Skills Section */
         .skills {
             padding: 8rem 2rem;
             background: var(--gradient-1);
             position: relative;
         }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
-
         .skill-category {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(20px);
@@ -353,12 +315,10 @@
             border: 1px solid rgba(255,255,255,0.2);
             transition: all 0.3s ease;
         }
-
         .skill-category:hover {
             transform: translateY(-5px);
             background: rgba(255,255,255,0.15);
         }
-
         .skill-category h3 {
             display: flex;
             align-items: center;
@@ -367,23 +327,19 @@
             margin-bottom: 1.5rem;
             color: white;
         }
-
         .skill-category i {
             font-size: 1.5rem;
             color: var(--accent);
         }
-
         .skill-bar {
             margin-bottom: 1.5rem;
         }
-
         .skill-info {
             display: flex;
             justify-content: space-between;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-
         .skill-progress {
             height: 8px;
             background: rgba(255,255,255,0.2);
@@ -391,7 +347,6 @@
             overflow: hidden;
             position: relative;
         }
-
         .skill-progress-bar {
             height: 100%;
             background: var(--gradient-4);
@@ -399,7 +354,6 @@
             transition: width 1s ease-out;
             position: relative;
         }
-
         .skill-progress-bar::after {
             content: '';
             position: absolute;
@@ -410,25 +364,21 @@
             background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
             animation: shimmer 2s infinite;
         }
-
         @keyframes shimmer {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
-
         /* Experience Section */
         .experience {
             padding: 8rem 2rem;
             background: var(--dark);
             position: relative;
         }
-
         .timeline {
             position: relative;
             max-width: 800px;
             margin: 4rem auto 0;
         }
-
         .timeline::before {
             content: '';
             position: absolute;
@@ -439,23 +389,19 @@
             background: var(--gradient-3);
             transform: translateX(-50%);
         }
-
         .timeline-item {
             position: relative;
             margin-bottom: 4rem;
             width: 50%;
         }
-
         .timeline-item:nth-child(odd) {
             left: 0;
             padding-right: 3rem;
         }
-
         .timeline-item:nth-child(even) {
             left: 50%;
             padding-left: 3rem;
         }
-
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -466,15 +412,12 @@
             top: 20px;
             box-shadow: 0 0 20px var(--accent);
         }
-
         .timeline-item:nth-child(odd)::before {
             right: -10px;
         }
-
         .timeline-item:nth-child(even)::before {
             left: -10px;
         }
-
         .timeline-content {
             background: var(--glass);
             backdrop-filter: blur(20px);
@@ -484,30 +427,25 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
         .timeline-content:hover {
             transform: scale(1.02);
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
-
         .timeline-content h3 {
             color: var(--accent);
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
-
         .timeline-date {
             color: var(--warning);
             font-weight: 600;
             margin-bottom: 1rem;
         }
-
         /* Impact Section Styles */
         .growth-visualization {
             max-width: 1000px;
             margin: 0 auto;
         }
-
         .chart-container {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(20px);
@@ -518,7 +456,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .chart-container::before {
             content: '';
             position: absolute;
@@ -528,7 +465,6 @@
             height: 4px;
             background: var(--gradient-4);
         }
-
         .chart-header {
             display: flex;
             justify-content: space-between;
@@ -537,13 +473,11 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
         .chart-header h3 {
             font-size: 1.5rem;
             color: white;
             margin: 0;
         }
-
         .chart-controls {
             display: flex;
             gap: 1rem;
@@ -551,7 +485,6 @@
             padding: 0.5rem;
             border-radius: 50px;
         }
-
         .chart-btn {
             padding: 0.7rem 1.5rem;
             border: none;
@@ -562,18 +495,15 @@
             transition: all 0.3s ease;
             font-weight: 500;
         }
-
         .chart-btn.active,
         .chart-btn:hover {
             background: var(--accent);
             color: white;
             transform: translateY(-2px);
         }
-
         .chart-area {
             position: relative;
         }
-
         .animated-chart {
             width: 100%;
             height: 400px;
@@ -583,7 +513,6 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
         }
-
         .chart-grid {
             position: absolute;
             top: 0;
@@ -592,18 +521,15 @@
             bottom: 0;
             padding: 40px;
         }
-
         .grid-line {
             position: absolute;
             background: rgba(255,255,255,0.1);
         }
-
         .grid-line.horizontal {
             left: 40px;
             right: 40px;
             height: 1px;
         }
-
         .chart-data {
             position: absolute;
             top: 40px;
@@ -612,12 +538,10 @@
             right: 40px;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .chart-data.hidden {
             opacity: 0;
             transform: translateY(20px);
         }
-
         .data-point {
             position: absolute;
             width: 12px;
@@ -627,22 +551,32 @@
             cursor: pointer;
             transform: translateX(-50%);
         }
-
-        .traditional .data-point {
-            background: linear-gradient(to top, #ef4444, #f87171);
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+        .chaotic .data-point {
+            background: linear-gradient(to top, #ef4444, #dc2626);
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+            font-size: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transform: translateX(-50%) rotate(5deg);
+            border: 1px solid #991b1b;
         }
-
-        .optimized .data-point {
-            background: linear-gradient(to top, #06d6a0, #34d399);
-            box-shadow: 0 0 15px rgba(6, 214, 160, 0.4);
+        .chaotic .data-point:nth-child(even) {
+            transform: translateX(-50%) rotate(-5deg);
         }
-
+        .structured .data-point {
+            background: linear-gradient(to top, #06d6a0, #0891b2);
+            box-shadow: 0 0 12px rgba(6, 214, 160, 0.4);
+            font-size: 12px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transform: translateX(-50%);
+        }
         .data-point:hover {
             transform: translateX(-50%) scale(1.2);
             z-index: 10;
         }
-
         .data-point::before {
             content: attr(data-value);
             position: absolute;
@@ -659,11 +593,9 @@
             transition: opacity 0.3s;
             margin-bottom: 8px;
         }
-
         .data-point:hover::before {
             opacity: 1;
         }
-
         .chart-labels {
             position: absolute;
             bottom: 20px;
@@ -671,7 +603,6 @@
             right: 40px;
             height: 20px;
         }
-
         .month-label {
             position: absolute;
             transform: translateX(-50%);
@@ -679,7 +610,6 @@
             color: rgba(255,255,255,0.7);
             font-weight: 500;
         }
-
         .value-labels {
             position: absolute;
             left: 0;
@@ -687,7 +617,6 @@
             bottom: 60px;
             width: 40px;
         }
-
         .value-label {
             position: absolute;
             right: 10px;
@@ -696,7 +625,6 @@
             color: rgba(255,255,255,0.7);
             font-weight: 500;
         }
-
         /* Animation for data points */
         @keyframes dataPointGrow {
             from {
@@ -707,11 +635,9 @@
                 opacity: 1;
             }
         }
-
         .chart-data:not(.hidden) .data-point {
             animation: dataPointGrow 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
-
         .chart-data:not(.hidden) .data-point:nth-child(1) { animation-delay: 0.1s; }
         .chart-data:not(.hidden) .data-point:nth-child(2) { animation-delay: 0.2s; }
         .chart-data:not(.hidden) .data-point:nth-child(3) { animation-delay: 0.3s; }
@@ -723,14 +649,12 @@
         .chart-data:not(.hidden) .data-point:nth-child(9) { animation-delay: 0.9s; }
         .chart-data:not(.hidden) .data-point:nth-child(10) { animation-delay: 1.0s; }
         .chart-data:not(.hidden) .data-point:nth-child(11) { animation-delay: 1.1s; }
-
         .chart-metrics {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmin(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
-
         .metric-card {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
@@ -742,12 +666,10 @@
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
         }
-
         .metric-card:hover {
             transform: translateY(-5px);
             background: rgba(255,255,255,0.15);
         }
-
         .metric-icon {
             font-size: 2rem;
             width: 60px;
@@ -758,31 +680,26 @@
             justify-content: center;
             background: var(--gradient-4);
         }
-
         .metric-content {
             flex: 1;
         }
-
         .metric-value {
             font-size: 2rem;
             font-weight: 800;
             color: var(--accent);
             line-height: 1;
         }
-
         .metric-label {
             font-size: 0.9rem;
             opacity: 0.8;
             margin-top: 0.2rem;
         }
-
         .success-stories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .story-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
@@ -794,7 +711,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .story-card::before {
             content: '';
             position: absolute;
@@ -804,13 +720,11 @@
             height: 3px;
             background: var(--gradient-3);
         }
-
         .story-card:hover {
             transform: translateY(-10px) scale(1.02);
             background: rgba(255,255,255,0.1);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-
         .story-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -825,19 +739,16 @@
             justify-content: center;
             margin: 0 auto 1.5rem;
         }
-
         .story-card h4 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: white;
         }
-
         .story-card p {
             opacity: 0.9;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-
         .story-impact {
             background: var(--gradient-4);
             color: var(--dark);
@@ -846,14 +757,12 @@
             font-weight: 700;
             display: inline-block;
         }
-
         /* Contact Section */
         .contact {
             padding: 8rem 2rem;
             background: var(--dark);
             text-align: center;
         }
-
         .contact-links {
             display: flex;
             justify-content: center;
@@ -861,7 +770,6 @@
             margin-top: 3rem;
             flex-wrap: wrap;
         }
-
         .contact-link {
             display: flex;
             align-items: center;
@@ -875,18 +783,15 @@
             color: white;
             transition: all 0.3s ease;
         }
-
         .contact-link:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             background: rgba(255,255,255,0.2);
         }
-
         .contact-link i {
             font-size: 1.2rem;
             color: var(--accent);
         }
-
         /* Responsive */
         @media (max-width: 768px) {
             .nav {
@@ -895,45 +800,37 @@
                 transform: none;
                 width: auto;
             }
-
             .nav-list {
                 justify-content: center;
                 flex-wrap: wrap;
             }
-
             .timeline::before {
                 left: 20px;
             }
-
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
                 padding-left: 3rem !important;
                 padding-right: 0 !important;
             }
-
             .timeline-item::before {
                 left: 10px !important;
                 right: auto !important;
             }
-
             .hero-cta {
                 flex-direction: column;
                 align-items: center;
             }
-
             .chart-metrics {
                 grid-template-columns: 1fr;
             }
         }
-
         /* Scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
@@ -953,33 +850,30 @@
         </ul>
     </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="hero">
-    <!-- Floating Particles -->
-    <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-    <div class="particle" style="top: 80%; left: 20%; animation-delay: 2s;"></div>
-    <div class="particle" style="top: 30%; right: 15%; animation-delay: 4s;"></div>
-    <div class="particle" style="bottom: 20%; right: 10%; animation-delay: 1s;"></div>
-    <div class="particle" style="top: 60%; left: 80%; animation-delay: 3s;"></div>
-
-    <div class="hero-content">
-        <div class="hero-avatar" style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin: 0 auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
-            <img src="https://i.postimg.cc/28XGsZJc/IMG20241101232209.jpg" alt="Ahmed Adenwala" style="width: 100%; height: 100%; object-fit: cover;" />
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Floating Particles -->
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 80%; left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 30%; right: 15%; animation-delay: 4s;"></div>
+        <div class="particle" style="bottom: 20%; right: 10%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 60%; left: 80%; animation-delay: 3s;"></div>
+        <div class="hero-content">
+            <div class="hero-avatar" style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin: 0 auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                <img src="https://i.postimg.cc/28XGsZJc/IMG20241101232209.jpg" alt="Ahmed Adenwala" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <h1>Ahmed Adenwala</h1>
+            <p class="hero-subtitle">Where Numbers Meet Innovation 🚀</p>
+            <p class="hero-description">
+                Transforming traditional accounting with the power of automation and AI. 
+                5+ years of turning financial chaos into organized excellence.
+            </p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary">Discover My Journey</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+            </div>
         </div>
-        <h1>Ahmed Adenwala</h1>
-        <p class="hero-subtitle">Where Numbers Meet Innovation 🚀</p>
-        <p class="hero-description">
-            Transforming traditional accounting with the power of automation and AI. 
-            5+ years of turning financial chaos into organized excellence.
-        </p>
-        <div class="hero-cta">
-            <a href="#about" class="btn btn-primary">Discover My Journey</a>
-            <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-        </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -1037,7 +931,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-category fade-in">
                     <h3><i class="fas fa-laptop-code"></i> Tech & Automation</h3>
                     <div class="skill-bar">
@@ -1068,7 +961,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-category fade-in">
                     <h3><i class="fas fa-tools"></i> Software Expertise</h3>
                     <div class="skill-bar">
@@ -1126,220 +1018,139 @@
                     <div class="timeline-content">
                         <h3>Assistant Accountant - Master Accounting Services</h3>
                         <div class="timeline-date">Jul 2019 - Jul 2020</div>
-                        <p>Specialized in GST compliance and multi-client financial management. Successfully handled GSTR-1 and GSTR-3B filings for 20+ clients, maintaining 100% compliance record. Streamlined bank reconciliation processes, reducing processing time by 40%.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
+                        <p>Specialized in GST compliance and multi-client financial management. Successfully handled GSTR-1 and GSTR-3B filings for 20+ clients, maintaining 100% compliance record. Streamlined bank reconciliation processes, reducing processing time by 40%.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
+    <!-- Impact Section - From Chaos to Clarity -->
     <section class="calculators" id="calculators">
         <div class="container">
-            <h2 class="section-title">The Power of Smart Finance</h2>
+            <h2 class="section-title">From Chaos to Clarity</h2>
             <p style="text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Watch how strategic financial management and automation transforms businesses from struggling to thriving
+                See how unstructured, error-prone financial data transforms into clean, automated, and actionable insights
             </p>
-            
-            <!-- Interactive Growth Chart -->
+
             <div class="growth-visualization fade-in">
                 <div class="chart-container">
                     <div class="chart-header">
-                        <h3>Business Growth Through Smart Financial Management</h3>
+                        <h3>Financial Data: Before & After Optimization</h3>
                         <div class="chart-controls">
-                            <button class="chart-btn active" onclick="showScenario('traditional')">Traditional Approach</button>
-                            <button class="chart-btn" onclick="showScenario('optimized')">With Ahmed's Approach</button>
+                            <button class="chart-btn active" onclick="showScenario('chaotic')">Chaos (Traditional)</button>
+                            <button class="chart-btn" onclick="showScenario('structured')">Clarity (My Approach)</button>
                         </div>
                     </div>
-                    
-                    <div class="chart-area">
-                        <div class="animated-chart" id="animatedChart">
-                            <div class="chart-grid">
-                                <div class="grid-line horizontal" style="bottom: 0%"></div>
-                                <div class="grid-line horizontal" style="bottom: 25%"></div>
-                                <div class="grid-line horizontal" style="bottom: 50%"></div>
-                                <div class="grid-line horizontal" style="bottom: 75%"></div>
-                                <div class="grid-line horizontal" style="bottom: 100%"></div>
-                            </div>
-                            
-                            <div class="chart-data traditional" id="traditionalChart">
-                                <div class="data-point" style="left: 8.33%; height: 20%;" data-value="105"></div>
-                                <div class="data-point" style="left: 16.66%; height: 25%;" data-value="110"></div>
-                                <div class="data-point" style="left: 25%; height: 22%;" data-value="108"></div>
-                                <div class="data-point" style="left: 33.33%; height: 30%;" data-value="115"></div>
-                                <div class="data-point" style="left: 41.66%; height: 32%;" data-value="118"></div>
-                                <div class="data-point" style="left: 50%; height: 35%;" data-value="120"></div>
-                                <div class="data-point" style="left: 58.33%; height: 38%;" data-value="125"></div>
-                                <div class="data-point" style="left: 66.66%; height: 36%;" data-value="122"></div>
-                                <div class="data-point" style="left: 75%; height: 42%;" data-value="130"></div>
-                                <div class="data-point" style="left: 83.33%; height: 45%;" data-value="135"></div>
-                                <div class="data-point" style="left: 91.66%; height: 50%;" data-value="140"></div>
-                            </div>
-                            
-                            <div class="chart-data optimized hidden" id="optimizedChart">
-                                <div class="data-point" style="left: 8.33%; height: 25%;" data-value="115"></div>
-                                <div class="data-point" style="left: 16.66%; height: 35%;" data-value="135"></div>
-                                <div class="data-point" style="left: 25%; height: 45%;" data-value="155"></div>
-                                <div class="data-point" style="left: 33.33%; height: 55%;" data-value="180"></div>
-                                <div class="data-point" style="left: 41.66%; height: 65%;" data-value="210"></div>
-                                <div class="data-point" style="left: 50%; height: 72%;" data-value="245"></div>
-                                <div class="data-point" style="left: 58.33%; height: 78%;" data-value="285"></div>
-                                <div class="data-point" style="left: 66.66%; height: 84%;" data-value="330"></div>
-                                <div class="data-point" style="left: 75%; height: 88%;" data-value="380"></div>
-                                <div class="data-point" style="left: 83.33%; height: 92%;" data-value="435"></div>
-                                <div class="data-point" style="left: 91.66%; height: 100%;" data-value="500"></div>
-                            </div>
-                            
-                            <div class="chart-labels">
-                                <div class="month-label" style="left: 8.33%;">Jan</div>
-                                <div class="month-label" style="left: 16.66%;">Feb</div>
-                                <div class="month-label" style="left: 25%;">Mar</div>
-                                <div class="month-label" style="left: 33.33%;">Apr</div>
-                                <div class="month-label" style="left: 41.66%;">May</div>
-                                <div class="month-label" style="left: 50%;">Jun</div>
-                                <div class="month-label" style="left: 58.33%;">Jul</div>
-                                <div class="month-label" style="left: 66.66%;">Aug</div>
-                                <div class="month-label" style="left: 75%;">Sep</div>
-                                <div class="month-label" style="left: 83.33%;">Oct</div>
-                                <div class="month-label" style="left: 91.66%;">Nov</div>
-                            </div>
-                            
-                            <div class="value-labels">
-                                <div class="value-label" style="bottom: 0%;">100</div>
-                                <div class="value-label" style="bottom: 25%;">200</div>
-                                <div class="value-label" style="bottom: 50%;">300</div>
-                                <div class="value-label" style="bottom: 75%;">400</div>
-                                <div class="value-label" style="bottom: 100%;">500</div>
+
+                    <div class="animated-chart" id="animatedChart">
+                        <!-- Chaotic Data -->
+                        <div class="chart-data chaotic" id="chaoticChart">
+                            <div class="data-point" style="left: 8.33%; height: 40%;" data-value="Err: #REF!">Err: #REF!</div>
+                            <div class="data-point" style="left: 12%; height: 60%;" data-value="500 (est?)">500 (est?)</div>
+                            <div class="data-point" style="left: 18%; height: 20%;" data-value="Missing">Missing</div>
+                            <div class="data-point" style="left: 22%; height: 75%;" data-value="1,200*">1,200*</div>
+                            <div class="data-point" style="left: 30%; height: 30%;" data-value="~80">~80</div>
+                            <div class="data-point" style="left: 35%; height: 90%;" data-value="Dup: 1.5k">Dup: 1.5k</div>
+                            <div class="data-point" style="left: 45%; height: 10%;" data-value="Pending">Pending</div>
+                            <div class="data-point" style="left: 50%; height: 85%;" data-value="1,050??">1,050??</div>
+                            <div class="data-point" style="left: 60%; height: 50%;" data-value="Varies">Varies</div>
+                            <div class="data-point" style="left: 68%; height: 40%;" data-value="No Data">No Data</div>
+                            <div class="data-point" style="left: 75%; height: 70%;" data-value="Manual">Manual</div>
+                            <div class="data-point" style="left: 80%; height: 65%;" data-value="Old Copy">Old Copy</div>
+                            <div class="data-point" style="left: 88%; height: 30%;" data-value="TBD">TBD</div>
+                            <div class="data-point" style="left: 95%; height: 80%;" data-value="Final?">Final?</div>
+                        </div>
+
+                        <!-- Structured Data -->
+                        <div class="chart-data structured hidden" id="structuredChart">
+                            <div class="data-point" style="left: 8.33%; height: 20%;" data-value="105">105</div>
+                            <div class="data-point" style="left: 16.66%; height: 25%;" data-value="110">110</div>
+                            <div class="data-point" style="left: 25%; height: 30%;" data-value="115">115</div>
+                            <div class="data-point" style="left: 33.33%; height: 35%;" data-value="120">120</div>
+                            <div class="data-point" style="left: 41.66%; height: 40%;" data-value="125">125</div>
+                            <div class="data-point" style="left: 50%; height: 45%;" data-value="130">130</div>
+                            <div class="data-point" style="left: 58.33%; height: 50%;" data-value="135">135</div>
+                            <div class="data-point" style="left: 66.66%; height: 55%;" data-value="140">140</div>
+                            <div class="data-point" style="left: 75%; height: 60%;" data-value="145">145</div>
+                            <div class="data-point" style="left: 83.33%; height: 65%;" data-value="150">150</div>
+                            <div class="data-point" style="left: 91.66%; height: 70%;" data-value="155">155</div>
+                        </div>
+
+                        <!-- Labels -->
+                        <div class="chart-labels">
+                            <div class="month-label" style="left: 8.33%;">Jan</div>
+                            <div class="month-label" style="left: 16.66%;">Feb</div>
+                            <div class="month-label" style="left: 25%;">Mar</div>
+                            <div class="month-label" style="left: 33.33%;">Apr</div>
+                            <div class="month-label" style="left: 41.66%;">May</div>
+                            <div class="month-label" style="left: 50%;">Jun</div>
+                            <div class="month-label" style="left: 58.33%;">Jul</div>
+                            <div class="month-label" style="left: 66.66%;">Aug</div>
+                            <div class="month-label" style="left: 75%;">Sep</div>
+                            <div class="month-label" style="left: 83.33%;">Oct</div>
+                            <div class="month-label" style="left: 91.66%;">Nov</div>
+                        </div>
+
+                        <div class="value-labels">
+                            <div class="value-label" style="bottom: 0%;">Low</div>
+                            <div class="value-label" style="bottom: 35%;">Medium</div>
+                            <div class="value-label" style="bottom: 70%;">High</div>
+                        </div>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="chart-metrics">
+                        <div class="metric-card" id="clarity">
+                            <div class="metric-icon">🧠</div>
+                            <div class="metric-content">
+                                <div class="metric-value" id="clarityValue">Chaos</div>
+                                <div class="metric-label">Data Clarity</div>
                             </div>
                         </div>
-                        <div class="chart-metrics">
-                            <div class="metric-card" id="efficiency">
-                                <div class="metric-icon">⚡</div>
-                                <div class="metric-content">
-                                    <div class="metric-value" id="efficiencyValue">45%</div>
-                                    <div class="metric-label">Process Efficiency</div>
-                                </div>
+                        <div class="metric-card" id="time">
+                            <div class="metric-icon">⏱️</div>
+                            <div class="metric-content">
+                                <div class="metric-value" id="timeValue">8h</div>
+                                <div class="metric-label">Time Spent Weekly</div>
                             </div>
-                            <div class="metric-card" id="accuracy">
-                                <div class="metric-icon">🎯</div>
-                                <div class="metric-content">
-                                    <div class="metric-value" id="accuracyValue">78%</div>
-                                    <div class="metric-label">Data Accuracy</div>
-                                </div>
+                        </div>
+                        <div class="metric-card" id="errors">
+                            <div class="metric-icon">❌</div>
+                            <div class="metric-content">
+                                <div class="metric-value" id="errorsValue">15+</div>
+                                <div class="metric-label">Monthly Errors</div>
                             </div>
-                            <div class="metric-card" id="growth">
-                                <div class="metric-icon">📈</div>
-                                <div class="metric-content">
-                                    <div class="metric-value" id="growthValue">+12%</div>
-                                    <div class="metric-label">Revenue Growth</div>
-                                </div>
-                            </div>
-                            <div class="metric-card" id="automation">
-                                <div class="metric-icon">🤖</div>
-                                <div class="metric-content">
-                                    <div class="metric-value" id="automationValue">25%</div>
-                                    <div class="metric-label">Tasks Automated</div>
-                                </div>
+                        </div>
+                        <div class="metric-card" id="confidence">
+                            <div class="metric-icon">✅</div>
+                            <div class="metric-content">
+                                <div class="metric-value" id="confidenceValue">Low</div>
+                                <div class="metric-label">Decision Confidence</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Success Stories -->
                 <div class="success-stories">
                     <div class="story-card fade-in">
-                        <div class="story-icon">🚀</div>
-                        <h4>Process Automation</h4>
-                        <p>Reduced manual data entry from 8 hours to 2 hours daily using Python automation scripts</p>
-                        <div class="story-impact">300% efficiency boost</div>
+                        <div class="story-icon">🧩</div>
+                        <h4>From Disarray to Order</h4>
+                        <p>Transformed disorganized spreadsheets into structured, automated systems with version control and audit trails</p>
+                        <div class="story-impact">Zero data loss</div>
                     </div>
                     <div class="story-card fade-in">
-                        <div class="story-icon">💎</div>
-                        <h4>Accuracy Excellence</h4>
-                        <p>Improved financial reporting accuracy from 85% to 99.5% through systematic process design</p>
-                        <div class="story-impact">Zero compliance issues</div>
+                        <div class="story-icon">🔍</div>
+                        <h4>Real Clarity</h4>
+                        <p>Eliminated guesswork with standardized naming, categorization, and real-time reconciliation</p>
+                        <div class="story-impact">Instant visibility</div>
                     </div>
                     <div class="story-card fade-in">
                         <div class="story-icon">⚡</div>
-                        <h4>Real-time Insights</h4>
-                        <p>Implemented live dashboards giving instant visibility into cash flow and financial health</p>
-                        <div class="story-impact">Faster decision making</div>
+                        <h4>Effortless Updates</h4>
+                        <p>Replaced manual entry with automated scripts—data flows in clean and ready to use</p>
+                        <div class="story-impact">No more late nights</div>
                     </div>
                 </div>
             </div>
@@ -1382,167 +1193,117 @@
     <div class="cursor-trail"></div>
 
     <script>
-        // Chart scenario switching function (THE MISSING FUNCTION!)
-        function showScenario(scenario) {
-            // Update button states
+        // Show chaotic or structured data
+        function showScenario(type) {
+            // Update buttons
             document.querySelectorAll('.chart-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
 
-            // Hide both charts first
-            const traditionalChart = document.getElementById('traditionalChart');
-            const optimizedChart = document.getElementById('optimizedChart');
-            
-            traditionalChart.classList.add('hidden');
-            optimizedChart.classList.add('hidden');
+            // Hide both charts
+            const chaoticChart = document.getElementById('chaoticChart');
+            const structuredChart = document.getElementById('structuredChart');
+            chaoticChart.classList.add('hidden');
+            structuredChart.classList.add('hidden');
 
-            // Show the selected chart after a brief delay
+            // Show selected chart after delay
             setTimeout(() => {
-                if (scenario === 'traditional') {
-                    traditionalChart.classList.remove('hidden');
+                if (type === 'chaotic') {
+                    chaoticChart.classList.remove('hidden');
                     updateMetrics({
-                        efficiency: '45%',
-                        accuracy: '78%',
-                        growth: '+12%',
-                        automation: '25%'
+                        clarity: 'Chaos',
+                        time: '8h',
+                        errors: '15+',
+                        confidence: 'Low'
                     });
                 } else {
-                    optimizedChart.classList.remove('hidden');
+                    structuredChart.classList.remove('hidden');
                     updateMetrics({
-                        efficiency: '95%',
-                        accuracy: '99.5%',
-                        growth: '+185%',
-                        automation: '85%'
+                        clarity: 'Clear',
+                        time: '1h',
+                        errors: '0',
+                        confidence: 'High'
                     });
                 }
             }, 200);
         }
 
-        // Update metrics display
+        // Update metrics
         function updateMetrics(values) {
-            document.getElementById('efficiencyValue').textContent = values.efficiency;
-            document.getElementById('accuracyValue').textContent = values.accuracy;
-            document.getElementById('growthValue').textContent = values.growth;
-            document.getElementById('automationValue').textContent = values.automation;
+            document.getElementById('clarityValue').textContent = values.clarity;
+            document.getElementById('timeValue').textContent = values.time;
+            document.getElementById('errorsValue').textContent = values.errors;
+            document.getElementById('confidenceValue').textContent = values.confidence;
         }
 
-        // Smooth scrolling and active navigation
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
-                
-                // Update active nav item
-                document.querySelectorAll('.nav-item a').forEach(link => {
-                    link.classList.remove('active');
-                });
+                document.querySelectorAll('.nav-item a').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
             });
         });
 
         // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Cursor trail effect
         const trails = document.querySelectorAll('.cursor-trail');
         let mouseX = 0, mouseY = 0;
         let trailX = [], trailY = [];
-
         for (let i = 0; i < trails.length; i++) {
             trailX[i] = 0;
             trailY[i] = 0;
         }
-
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', e => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
-
         function animateTrails() {
             let x = mouseX, y = mouseY;
-            
             for (let i = 0; i < trails.length; i++) {
                 trailX[i] += (x - trailX[i]) * 0.3;
                 trailY[i] += (y - trailY[i]) * 0.3;
-                
                 trails[i].style.left = trailX[i] + 'px';
                 trails[i].style.top = trailY[i] + 'px';
                 trails[i].style.opacity = 1 - (i * 0.2);
                 trails[i].style.transform = `scale(${1 - i * 0.1})`;
-                
                 x = trailX[i];
                 y = trailY[i];
             }
-            
             requestAnimationFrame(animateTrails);
         }
-
         animateTrails();
 
-        // Update navigation on scroll
+        // Update nav on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollPos = window.scrollY + 100;
-            
             sections.forEach(section => {
                 const top = section.offsetTop;
                 const bottom = top + section.offsetHeight;
                 const id = section.getAttribute('id');
-                
                 if (scrollPos >= top && scrollPos <= bottom) {
-                    document.querySelectorAll('.nav-item a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    const activeLink = document.querySelector(`.nav-item a[href="#${id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active');
-                    }
+                    document.querySelectorAll('.nav-item a').forEach(link => link.classList.remove('active'));
+                    const link = document.querySelector(`.nav-item a[href="#${id}"]`);
+                    if (link) link.classList.add('active');
                 }
             });
         });
 
-        // Add some dynamic particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 6 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-            
-            document.querySelector('.hero').appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 8000);
-        }
-
-        // Create particles periodically
-        setInterval(createParticle, 3000);
-
-        // Animate skill bars on scroll
+        // Animate skill bars
         const skillBars = document.querySelectorAll('.skill-progress-bar');
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1550,16 +1311,11 @@
                     const bar = entry.target;
                     const width = bar.style.width;
                     bar.style.width = '0%';
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 300);
+                    setTimeout(() => bar.style.width = width, 300);
                 }
             });
         }, { threshold: 0.5 });
-
-        skillBars.forEach(bar => {
-            skillObserver.observe(bar);
-        });
+        skillBars.forEach(bar => skillObserver.observe(bar));
     </script>
 </body>
 </html>
