@@ -6,6 +6,10 @@
     <title>Ahmed Adenwala | Where Numbers Meet Innovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
     <style>
         * {
             margin: 0;
@@ -47,6 +51,7 @@
             line-height: 1.7;
             overflow-x: hidden;
         }
+
         /* Cursor Trail */
         .cursor-trail {
             position: fixed;
@@ -59,6 +64,7 @@
             z-index: 9999;
             transition: opacity 0.3s;
         }
+
         /* Floating Particles */
         .particle {
             position: absolute;
@@ -73,6 +79,7 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -199,6 +206,7 @@
                 transform: translateY(0);
             }
         }
+
         /* Navigation */
         .nav {
             position: fixed;
@@ -230,6 +238,7 @@
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
         }
+
         /* About Section */
         .about {
             padding: 8rem 2rem;
@@ -295,6 +304,7 @@
             margin-bottom: 1rem;
             color: var(--accent);
         }
+
         /* Skills Section */
         .skills {
             padding: 8rem 2rem;
@@ -368,6 +378,7 @@
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
+
         /* Experience Section */
         .experience {
             padding: 8rem 2rem;
@@ -441,6 +452,7 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
+
         /* Impact Section Styles */
         .growth-visualization {
             max-width: 1000px;
@@ -625,7 +637,6 @@
             color: rgba(255,255,255,0.7);
             font-weight: 500;
         }
-        /* Animation for data points */
         @keyframes dataPointGrow {
             from {
                 height: 0;
@@ -727,8 +738,7 @@
         }
         .story-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
-            display: inline-block;
+            margin-bottom: 1.5rem;
             padding: 1rem;
             background: var(--gradient-4);
             border-radius: 50%;
@@ -737,7 +747,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto;
         }
         .story-card h4 {
             font-size: 1.3rem;
@@ -757,6 +767,47 @@
             font-weight: 700;
             display: inline-block;
         }
+
+        /* Smart PDF Tool Section */
+        .smart-tool {
+            padding: 8rem 2rem;
+            background: var(--dark);
+        }
+        #status .status {
+            padding: 0.75rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: white;
+        }
+        #status .success { background: rgba(6, 214, 160, 0.3); border: 1px solid rgba(6, 214, 160, 0.5); }
+        #status .error { background: rgba(239, 68, 68, 0.3); border: 1px solid rgba(239, 68, 68, 0.5); }
+        #status .info { background: rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.5); }
+
+        .selection-box {
+            position: absolute;
+            border: 2px dashed var(--danger);
+            background: rgba(239, 68, 68, 0.1);
+            cursor: move;
+            z-index: 10;
+            min-width: 20px;
+            min-height: 20px;
+            border-radius: 4px;
+        }
+        .selection-box:hover {
+            background: rgba(239, 68, 68, 0.2);
+        }
+        .selection-box::before {
+            content: '✏️';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
         /* Contact Section */
         .contact {
             padding: 8rem 2rem;
@@ -792,6 +843,7 @@
             font-size: 1.2rem;
             color: var(--accent);
         }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav {
@@ -825,7 +877,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* Scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -838,6 +889,7 @@
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="nav">
         <ul class="nav-list">
@@ -846,13 +898,13 @@
             <li class="nav-item"><a href="#skills">Skills</a></li>
             <li class="nav-item"><a href="#experience">Experience</a></li>
             <li class="nav-item"><a href="#calculators">Tools</a></li>
+            <li class="nav-item"><a href="#smart-tool">PDFTool</a></li>
             <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Floating Particles -->
         <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="top: 80%; left: 20%; animation-delay: 2s;"></div>
         <div class="particle" style="top: 30%; right: 15%; animation-delay: 4s;"></div>
@@ -1025,14 +1077,13 @@
         </div>
     </section>
 
-    <!-- Impact Section - From Chaos to Clarity -->
+    <!-- Impact Section -->
     <section class="calculators" id="calculators">
         <div class="container">
             <h2 class="section-title">From Chaos to Clarity</h2>
             <p style="text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 See how unstructured, error-prone financial data transforms into clean, automated, and actionable insights
             </p>
-
             <div class="growth-visualization fade-in">
                 <div class="chart-container">
                     <div class="chart-header">
@@ -1042,9 +1093,7 @@
                             <button class="chart-btn" onclick="showScenario('structured')">Clarity (My Approach)</button>
                         </div>
                     </div>
-
                     <div class="animated-chart" id="animatedChart">
-                        <!-- Chaotic Data -->
                         <div class="chart-data chaotic" id="chaoticChart">
                             <div class="data-point" style="left: 8.33%; height: 40%;" data-value="Err: #REF!">Err: #REF!</div>
                             <div class="data-point" style="left: 12%; height: 60%;" data-value="500 (est?)">500 (est?)</div>
@@ -1061,8 +1110,6 @@
                             <div class="data-point" style="left: 88%; height: 30%;" data-value="TBD">TBD</div>
                             <div class="data-point" style="left: 95%; height: 80%;" data-value="Final?">Final?</div>
                         </div>
-
-                        <!-- Structured Data -->
                         <div class="chart-data structured hidden" id="structuredChart">
                             <div class="data-point" style="left: 8.33%; height: 20%;" data-value="105">105</div>
                             <div class="data-point" style="left: 16.66%; height: 25%;" data-value="110">110</div>
@@ -1076,8 +1123,6 @@
                             <div class="data-point" style="left: 83.33%; height: 65%;" data-value="150">150</div>
                             <div class="data-point" style="left: 91.66%; height: 70%;" data-value="155">155</div>
                         </div>
-
-                        <!-- Labels -->
                         <div class="chart-labels">
                             <div class="month-label" style="left: 8.33%;">Jan</div>
                             <div class="month-label" style="left: 16.66%;">Feb</div>
@@ -1091,15 +1136,12 @@
                             <div class="month-label" style="left: 83.33%;">Oct</div>
                             <div class="month-label" style="left: 91.66%;">Nov</div>
                         </div>
-
                         <div class="value-labels">
                             <div class="value-label" style="bottom: 0%;">Low</div>
                             <div class="value-label" style="bottom: 35%;">Medium</div>
                             <div class="value-label" style="bottom: 70%;">High</div>
                         </div>
                     </div>
-
-                    <!-- Metrics -->
                     <div class="chart-metrics">
                         <div class="metric-card" id="clarity">
                             <div class="metric-icon">🧠</div>
@@ -1131,8 +1173,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Success Stories -->
                 <div class="success-stories">
                     <div class="story-card fade-in">
                         <div class="story-icon">🧩</div>
@@ -1156,6 +1196,83 @@
             </div>
         </div>
     </section>
+
+    <!-- Smart PDF Tool Section -->
+    <section class="smart-tool" id="smart-tool">
+        <div class="container">
+            <h2 class="section-title fade-in">Smart PDF Text Extractor</h2>
+            <p class="fade-in" style="text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Upload financial PDFs, draw over key fields, and extract structured data instantly with AI-powered precision.
+            </p>
+
+            <div style="background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2rem; overflow: hidden; position: relative;">
+                <div id="status"></div>
+
+                <label id="upload-area" style="padding: 2rem; border: 2px dashed var(--primary); border-radius: 12px; background: rgba(99, 102, 241, 0.1); text-align: center; cursor: pointer; margin-bottom: 1.5rem; transition: all 0.3s ease; display: block;">
+                    <span style="font-size: 1.2rem; color: white;">📎 Choose PDF File or Drop Here</span>
+                    <input type="file" id="pdf-input" accept="application/pdf" style="display:none;" />
+                </label>
+
+                <div id="pdf-container" style="display: none; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <canvas id="pdf-canvas" style="display: block; width: 100%; height: auto;"></canvas>
+                    <div id="boxes-layer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto;"></div>
+                </div>
+
+                <div class="action-buttons" style="margin: 2rem 0; text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button id="add-box-btn" class="btn btn-secondary" style="padding: 0.75rem 1.5rem; min-width: 120px;">➕ Add Box</button>
+                    <button id="clear-boxes-btn" class="btn btn-secondary" style="padding: 0.75rem 1.5rem;">🗑️ Clear Boxes</button>
+                    <button id="extract-btn" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">🔍 Extract Text</button>
+                    <button id="batch-upload-btn" class="btn btn-secondary" style="padding: 0.75rem 1.5rem;">📁 Batch Process</button>
+                </div>
+
+                <div id="batch-section" style="display: none; margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.3rem;">Batch Processing</h3>
+                    <p style="opacity: 0.8; margin-bottom: 1rem;">Upload multiple PDFs to extract data using the same box positions:</p>
+                    <input type="file" id="batch-input" accept="application/pdf" multiple style="margin: 10px 0;" />
+                    <button id="process-batch-btn" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">🚀 Process All PDFs</button>
+                    <div id="batch-progress" style="margin-top: 1rem; color: var(--accent); font-weight: 500;"></div>
+                </div>
+
+                <div id="results" style="margin-top: 3rem; display: none;">
+                    <h3 style="color: white; margin-bottom: 1rem;">Extracted Data</h3>
+                    <div style="overflow-x: auto;">
+                        <table id="results-table" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                            <thead>
+                                <tr style="background: var(--gradient-3);">
+                                    <th style="padding: 1rem; color: white; text-align: left;">PDF File</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <button id="download-csv" class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.75rem 2rem;">⬇️ Download CSV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div style="text-align: center; margin-top: 50px;">
+  <a href="https://ahmed-adenwala.github.io/PDF-TOOL/" 
+     style="
+       display: inline-block;
+       padding: 15px 30px;
+       font-size: 18px;
+       font-weight: bold;
+       color: white;
+       background: linear-gradient(135deg, #3f51b5, #9c27b0);
+       text-decoration: none;
+       border-radius: 8px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
+     "
+     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0, 0, 0, 0.3)'"
+     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'"
+  >
+    More advanced pdf tool
+  </a>
+</div>
+
+
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -1195,41 +1312,22 @@
     <script>
         // Show chaotic or structured data
         function showScenario(type) {
-            // Update buttons
-            document.querySelectorAll('.chart-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            document.querySelectorAll('.chart-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-
-            // Hide both charts
             const chaoticChart = document.getElementById('chaoticChart');
             const structuredChart = document.getElementById('structuredChart');
             chaoticChart.classList.add('hidden');
             structuredChart.classList.add('hidden');
-
-            // Show selected chart after delay
             setTimeout(() => {
                 if (type === 'chaotic') {
                     chaoticChart.classList.remove('hidden');
-                    updateMetrics({
-                        clarity: 'Chaos',
-                        time: '8h',
-                        errors: '15+',
-                        confidence: 'Low'
-                    });
+                    updateMetrics({ clarity: 'Chaos', time: '8h', errors: '15+', confidence: 'Low' });
                 } else {
                     structuredChart.classList.remove('hidden');
-                    updateMetrics({
-                        clarity: 'Clear',
-                        time: '1h',
-                        errors: '0',
-                        confidence: 'High'
-                    });
+                    updateMetrics({ clarity: 'Clear', time: '1h', errors: '0', confidence: 'High' });
                 }
             }, 200);
         }
-
-        // Update metrics
         function updateMetrics(values) {
             document.getElementById('clarityValue').textContent = values.clarity;
             document.getElementById('timeValue').textContent = values.time;
@@ -1242,9 +1340,7 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
                 document.querySelectorAll('.nav-item a').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
             });
@@ -1256,7 +1352,6 @@
                 if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Cursor trail effect
@@ -1316,6 +1411,340 @@
             });
         }, { threshold: 0.5 });
         skillBars.forEach(bar => skillObserver.observe(bar));
+
+        // === PDF Tool JavaScript (Integrated) ===
+        const pdfInput = document.getElementById('pdf-input');
+        const uploadArea = document.getElementById('upload-area');
+        const canvas = document.getElementById('pdf-canvas');
+        const ctx = canvas.getContext('2d');
+        const boxesLayer = document.getElementById('boxes-layer');
+        const addBoxBtn = document.getElementById('add-box-btn');
+        const clearBoxesBtn = document.getElementById('clear-boxes-btn');
+        const extractBtn = document.getElementById('extract-btn');
+        const batchUploadBtn = document.getElementById('batch-upload-btn');
+        const batchSection = document.getElementById('batch-section');
+        const batchInput = document.getElementById('batch-input');
+        const processBatchBtn = document.getElementById('process-batch-btn');
+        const batchProgress = document.getElementById('batch-progress');
+        const resultsDiv = document.getElementById('results');
+        const resultsBody = document.querySelector('#results-table tbody');
+        const downloadCsvBtn = document.getElementById('download-csv');
+        const statusDiv = document.getElementById('status');
+
+        let pdfDoc = null;
+        let page = null;
+        let scale = 2.0;
+        let viewport = null;
+        let textContent = null;
+        let boxes = [];
+        let boxLabels = [];
+        let allExtractedData = [];
+        let isDrawing = false;
+        let addingBox = false;
+        let startX, startY;
+        let currentBox = null;
+
+        function showStatus(message, type = 'info') {
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+            setTimeout(() => statusDiv.innerHTML = '', 5000);
+        }
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].type === 'application/pdf') {
+                handlePdfFile(files[0]);
+            } else {
+                showStatus('Please drop a valid PDF file.', 'error');
+            }
+        });
+
+        pdfInput.addEventListener('change', () => handlePdfFile(pdfInput.files[0]));
+
+        async function handlePdfFile(file) {
+            try {
+                showStatus('Loading PDF...', 'info');
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    try {
+                        const typedArray = new Uint8Array(e.target.result);
+                        pdfDoc = await pdfjsLib.getDocument({ data: typedArray }).promise;
+                        page = await pdfDoc.getPage(1);
+                        viewport = page.getViewport({ scale });
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+                        canvas.style.width = viewport.width + 'px';
+                        canvas.style.height = viewport.height + 'px';
+                        const renderContext = { canvasContext: ctx, viewport: viewport };
+                        await page.render(renderContext).promise;
+                        textContent = await page.getTextContent();
+                        boxesLayer.style.width = viewport.width + 'px';
+                        boxesLayer.style.height = viewport.height + 'px';
+                        document.getElementById('pdf-container').style.display = 'block';
+                        clearBoxes();
+                        resultsDiv.style.display = 'none';
+                        showStatus('PDF ready! Click "Add Box" to start selecting areas.', 'success');
+                    } catch (error) {
+                        showStatus(`Error loading PDF: ${error.message}`, 'error');
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            } catch (error) {
+                showStatus(`Error: ${error.message}`, 'error');
+            }
+        }
+
+        addBoxBtn.addEventListener('click', () => {
+            addingBox = !addingBox;
+            addBoxBtn.textContent = addingBox ? '⏹️ Stop Adding' : '➕ Add Box';
+            addBoxBtn.classList.toggle('active');
+            showStatus(addingBox ? 'Click and drag to create a selection box' : '');
+        });
+
+        clearBoxesBtn.addEventListener('click', () => {
+            boxes = []; boxLabels = []; boxesLayer.innerHTML = ''; resultsDiv.style.display = 'none';
+        });
+
+        boxesLayer.addEventListener('mousedown', (e) => {
+            if (!addingBox || !pdfDoc) return;
+            e.preventDefault();
+            isDrawing = true;
+            const rect = boxesLayer.getBoundingClientRect();
+            startX = e.clientX - rect.left;
+            startY = e.clientY - rect.top;
+            currentBox = document.createElement('div');
+            currentBox.className = 'selection-box';
+            currentBox.style.left = `${startX}px`;
+            currentBox.style.top = `${startY}px`;
+            currentBox.style.width = '0px';
+            currentBox.style.height = '0px';
+            boxesLayer.appendChild(currentBox);
+        });
+
+        boxesLayer.addEventListener('mousemove', (e) => {
+            if (!isDrawing || !currentBox) return;
+            const rect = boxesLayer.getBoundingClientRect();
+            const currentX = e.clientX - rect.left;
+            const currentY = e.clientY - rect.top;
+            const width = Math.abs(currentX - startX);
+            const height = Math.abs(currentY - startY);
+            const left = Math.min(startX, currentX);
+            const top = Math.min(startY, currentY);
+            currentBox.style.left = `${left}px`;
+            currentBox.style.top = `${top}px`;
+            currentBox.style.width = `${width}px`;
+            currentBox.style.height = `${height}px`;
+        });
+
+        boxesLayer.addEventListener('mouseup', (e) => {
+            if (!isDrawing || !currentBox) return;
+            const rect = boxesLayer.getBoundingClientRect();
+            const endX = e.clientX - rect.left;
+            const endY = e.clientY - rect.top;
+            const x = Math.min(startX, endX);
+            const y = Math.min(startY, endY);
+            const width = Math.abs(endX - startX);
+            const height = Math.abs(endY - startY);
+            if (width > 10 && height > 10) {
+                const boxId = Date.now();
+                currentBox.dataset.id = boxId;
+                currentBox.addEventListener('dblclick', () => {
+                    boxes = boxes.filter(b => b.id !== boxId);
+                    boxLabels = boxLabels.filter(l => l.id !== boxId);
+                    currentBox.remove();
+                });
+                currentBox.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                    const label = prompt('Enter label for this box:', `Field ${boxes.length + 1}`);
+                    if (label) {
+                        const existing = boxLabels.find(l => l.id === boxId);
+                        if (existing) existing.label = label;
+                        else boxLabels.push({ id: boxId, label });
+                        currentBox.title = label;
+                    }
+                });
+                boxes.push({ id: boxId, x, y, width, height });
+                showStatus(`Box ${boxes.length} added. Right-click to label, double-click to delete.`, 'success');
+            } else {
+                currentBox.remove();
+            }
+            isDrawing = false;
+            currentBox = null;
+        });
+
+        extractBtn.addEventListener('click', () => {
+        if (!pdfDoc) {
+            showStatus('Please load a PDF first.', 'error');
+            return;
+        }
+
+        const rules = getTextRulesData();
+        const usingBox = boxes.length > 0;
+        const usingText = rules.length > 0;
+
+        if (!usingBox && !usingText) {
+            showStatus('Please add at least one selection box or one text rule.', 'error');
+            return;
+        }
+
+        const extractedData = extractDataFromCurrentPDF();
+        allExtractedData = [extractedData];
+        displayResults();
+        showStatus(`Extracted using ${usingBox && usingText ? 'box & text rules' : usingBox ? 'box' : 'text rules'}.`, 'success');
+        });
+
+        function extractDataFromCurrentPDF(filename = 'Current PDF') {
+        const data = { filename: filename };
+
+        // Box method
+        boxes.forEach((box, i) => {
+            const boxLabel = boxLabels.find(l => l.id === box.id);
+            const fieldName = boxLabel ? boxLabel.label : `Field ${i + 1}`;
+            const extractedText = extractTextInBox(box, textContent.items);
+            data[fieldName] = extractedText || '(no text found)';
+        });
+
+        // Text rules method
+        const rules = getTextRulesData();
+        rules.forEach(rule => {
+            const extractedText = extractTextAfterText(rule, textContent.items);
+            data[rule.fieldName] = extractedText || '(no text found)';
+        });
+
+        return data;
+        }
+        
+
+        function displayResults() {
+            resultsBody.innerHTML = '';
+            if (allExtractedData.length === 0) return;
+            const allFields = new Set();
+            allExtractedData.forEach(data => Object.keys(data).forEach(k => k !== 'filename' && allFields.add(k)));
+            const fieldNames = Array.from(allFields);
+            const thead = document.querySelector('#results-table thead tr');
+            thead.innerHTML = '<th>PDF File</th>' + fieldNames.map(f => `<th>${f}</th>`).join('');
+            allExtractedData.forEach(data => {
+                const row = document.createElement('tr');
+                let rowHTML = `<td>${data.filename}</td>`;
+                fieldNames.forEach(f => rowHTML += `<td>${data[f] || '(not found)'}</td>`);
+                row.innerHTML = rowHTML;
+                resultsBody.appendChild(row);
+            });
+            resultsDiv.style.display = 'block';
+        }
+
+        batchUploadBtn.addEventListener('click', () => {
+            if (boxes.length === 0) return showStatus('Please create boxes first by uploading a template PDF and drawing selection boxes.', 'error');
+            batchSection.style.display = batchSection.style.display === 'none' ? 'block' : 'none';
+        });
+
+        processBatchBtn.addEventListener('click', async () => {
+            const files = Array.from(batchInput.files);
+            if (files.length === 0) return showStatus('Please select PDF files to process.', 'error');
+            if (boxes.length === 0) return showStatus('Please create selection boxes first.', 'error');
+            allExtractedData = []; batchProgress.innerHTML = '';
+            showStatus(`Processing ${files.length} PDF files...`, 'info');
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                batchProgress.innerHTML = `<div>Processing: ${file.name} (${i + 1}/${files.length})</div>`;
+                try {
+                    const extractedData = await processSinglePDF(file);
+                    allExtractedData.push(extractedData);
+                } catch (error) {
+                    allExtractedData.push({ filename: file.name, error: `Error: ${error.message}` });
+                }
+            }
+            displayResults();
+            batchProgress.innerHTML = `<div style="color:#27ae60; font-weight:bold;">✅ Completed processing ${files.length} files!</div>`;
+            showStatus(`Successfully processed ${files.length} PDF files!`, 'success');
+        });
+
+        async function processSinglePDF(file) {
+            return new Promise(async (resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    try {
+                        const typedArray = new Uint8Array(e.target.result);
+                        const tempPdfDoc = await pdfjsLib.getDocument({ data: typedArray }).promise;
+                        const tempPage = await tempPdfDoc.getPage(1);
+                        const tempTextContent = await tempPage.getTextContent();
+                        const data = { filename: file.name };
+                        boxes.forEach((box, i) => {
+                            const boxLabel = boxLabels.find(l => l.id === box.id);
+                            const fieldName = boxLabel ? boxLabel.label : `Field ${i + 1}`;
+                            const extractedText = extractTextInBox(box, tempTextContent.items);
+                            data[fieldName] = extractedText || '(no text found)';
+                        });
+                        resolve(data);
+                    } catch (error) { reject(error); }
+                };
+                reader.onerror = () => reject(new Error('Failed to read file'));
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        function extractTextInBox(box, textItems) {
+            const { x, y, width, height } = box;
+            const boxRight = x + width;
+            const boxBottom = y + height;
+            const foundTexts = [];
+            textItems.forEach(item => {
+                const text = item.str.trim();
+                if (!text) return;
+                const tx = item.transform[4];
+                const ty = item.transform[5];
+                const textWidth = item.width;
+                const textHeight = item.height;
+                const canvasX = tx * scale;
+                const canvasY = viewport.height - (ty * scale) - (textHeight * scale);
+                const canvasWidth = textWidth * scale;
+                const canvasHeight = textHeight * scale;
+                const textRight = canvasX + canvasWidth;
+                const textBottom = canvasY + canvasHeight;
+                const horizontalOverlap = canvasX < boxRight && textRight > x;
+                const verticalOverlap = canvasY < boxBottom && textBottom > y;
+                if (horizontalOverlap && verticalOverlap) {
+                    foundTexts.push({ text, x: canvasX, y: canvasY });
+                }
+            });
+            foundTexts.sort((a, b) => {
+                const yDiff = a.y - b.y;
+                return Math.abs(yDiff) < 10 ? a.x - b.x : yDiff;
+            });
+            return foundTexts.map(item => item.text).join(' ').trim();
+        }
+
+        downloadCsvBtn.addEventListener('click', () => {
+            if (allExtractedData.length === 0) return showStatus('No data to download. Please extract text first.', 'error');
+            const allFields = new Set();
+            allExtractedData.forEach(data => Object.keys(data).forEach(k => k !== 'filename' && allFields.add(k)));
+            const fieldNames = Array.from(allFields);
+            let csv = 'PDF File,' + fieldNames.join(',') + '\n';
+            allExtractedData.forEach(data => {
+                let row = `"${data.filename}",`;
+                const values = fieldNames.map(field => `"${(data[field] || '').toString().replace(/"/g, '""')}"`);
+                row += values.join(',');
+                csv += row + '\n';
+            });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `extracted_pdf_data_${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showStatus('CSV file downloaded successfully!', 'success');
+        });
+
+        boxesLayer.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
 </html>
